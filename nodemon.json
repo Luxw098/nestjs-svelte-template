@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "views"],
+  "ext": "ts, js, json, svelte",
+  "ignore": ["src/**/*.spec.ts", "node_modules"],
+  "exec": "pnpm run start:dev"
+}
