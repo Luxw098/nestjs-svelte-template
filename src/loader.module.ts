@@ -12,7 +12,6 @@ export class Loader {
 
     files.forEach((file) => {
       if (file.match(/^.*\.controller\.(ts|js)$/)) {
-        console.log(file)
         const controller = require(join(__dirname,  'api', 'endpoints', file)).default;
         controllers.push(controller);
       }

@@ -35,10 +35,15 @@
     min-width: 100vw;
     min-height: 100vh;
     background-color: var(--bgColour);
+    color: var(--txtColour);
   }
 
   :global(i) {
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  main {
+    padding: 10px;
   }
 </style>
