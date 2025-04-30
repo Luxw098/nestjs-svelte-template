@@ -1,10 +1,10 @@
 {
-  "name": "nest-svelte",
+  "name": "changeme",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
-  "private": true,
-  "license": "UNLICENSED",
+  "description": "changeme",
+  "author": "changeme",
+  "private": false,
+  "license": "GPL-3.0-or-later",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
