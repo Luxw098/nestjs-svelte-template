@@ -5,7 +5,7 @@ import { join } from 'path';
 @Controller("/api")
 export default class {
   @Get()
-  getApi() {
+  get() {
     return {
       status: "ok",
       code: "200",

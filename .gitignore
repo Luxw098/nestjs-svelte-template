@@ -1,6 +1,18 @@
+.vscode
+
+*/node_modules
+node_modules
+
+*/bun.lockb
+bun.lockb
+
+# Svelte client
+*/.svelte-kit
+
 # compiled output
-/dist
-/node_modules
+*/build
+*/dist
+dist
 
 # Logs
 logs

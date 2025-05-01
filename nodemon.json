@@ -1,6 +1,7 @@
 {
-  "watch": ["src", "views"],
-  "ext": "ts, js, json, svelte",
-  "ignore": ["src/**/*.spec.ts", "node_modules"],
-  "exec": "pnpm run start:dev"
+  "restartable": "rs",
+  "watch": ["frontend", "backend"],
+  "ext": "ts, js, json, db, svelte",
+  "ignore": ["node_modules", "*/dist", "*/build", "*/test"],
+  "exec": "concurrently --names Back-End,Front-End --prefix-colors red,cyan \"cd backend & bun run start:dev\" \"cd frontend & bun run dev\""
 }
