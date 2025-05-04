@@ -5,21 +5,30 @@ import { IoAdapter } from '@nestjs/platform-socket.io';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { Logger } from '@nestjs/common';
+import { readFileSync } from 'fs';
 
-async function bootstrap() {
-  const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  const ioAdapter = new IoAdapter(app);
+const httpsOptions = {
+  key: readFileSync('../cert/key.key'),
+  cert: readFileSync('../cert/cert.crt'),
+};
 
-  const logger = new Logger();
-  app.use((req, res, next) => {
-    logger.log("Request to " + req.url + ".");
-    next();
-  });
+class Backend {
+  private logger = new Logger(Backend.name);
 
-  app.useWebSocketAdapter(ioAdapter);
+  async setup() {
+    const app = await NestFactory.create<NestExpressApplication>(AppModule, { httpsOptions });
+    const ioAdapter = new IoAdapter(app);
 
-  await app.listen(3001);
+    app.use((req, res, next) => {
+      this.logger.log("Request to " + req.url + " from " + req.ip + ".");
+      next();
+    });
 
-  Logger.log(`backend listening: ${await app.getUrl()}`);
-}
-bootstrap();
+    app.useWebSocketAdapter(ioAdapter);
+
+    await app.listen(3001);
+    this.logger.log(`Listening on Port: ${await app.getUrl()}`);
+  }
+};
+
+new Backend().setup();

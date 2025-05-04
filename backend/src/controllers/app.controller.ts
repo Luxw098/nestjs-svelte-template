@@ -1,8 +1,8 @@
 import { Controller, Get, Redirect, Render } from '@nestjs/common';
 
 @Controller()
-export default class {
+export class AppController {
   @Get()
-  @Redirect("/api")
   get(){}
 }
+export default AppController

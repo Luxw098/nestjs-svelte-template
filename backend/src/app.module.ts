@@ -1,12 +1,22 @@
 import { Module } from '@nestjs/common';
-import controllers from './controllers';
-import providers from './gateways';
+import * as imports from "./imports";
+import allimports from "./imports";
 
-import wss from './gateways/wss.gateway';
-
+// Comment out items below if you do not require them
+// Please do not edit my options, You may comment them out
+// You may add your own options
 @Module({
-  imports: [],
-  controllers: controllers,
-  providers: [wss]
+  controllers: [].concat(...[
+    imports.appControllers, // Main app controller
+    imports.authControllers, // Account + JWTCookie authentication (Prisma Required)
+    imports.apiControllers, // Backend API
+  ]),
+  providers: [].concat(...[
+    imports.appProviders, // Main app controller
+    imports.dbProviders, // Prisma connection (sqlite)
+    imports.authProviders, // Account + JWTCookie authentication (Prisma Required)
+    imports.socketsProviders // Socket.io WS serve
+  ]),
+  exports: [allimports.IJwt, allimports.IAccounts, allimports.IPrisma],
 })
-export class AppModule {}
+export class AppModule { }

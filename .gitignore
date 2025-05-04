@@ -1,5 +1,8 @@
 .vscode
 
+*/prisma/migrations/*
+*/prisma/*.db
+
 */node_modules
 node_modules
 
