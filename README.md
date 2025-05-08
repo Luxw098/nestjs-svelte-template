@@ -4,7 +4,7 @@
 1. `git clone https://github.com/Luxw098/nestjs-svelte-template ProjectName`
 2. `cd ProjectName`
 3. `bun run setup`
-3. `bun run db` If you're using the Prisma ORM
+3. Do your personalisation
 4. `bun run dev`
 <br><br>
 
@@ -16,7 +16,6 @@
 - Socket.IO Server
 2. Edit `backend/prisma/schema.prisma` to configure your database.
 - Default database is SQLite
-3. run `bun run db` to update the database
 4. If applicable, edit `backend/.env` to configure your database URL.
 5. Setup ports at these locations:
 - `backend/src/main.ts` for Back-end ports
