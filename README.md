@@ -1,10 +1,10 @@
 # Nestjs + Svelte Template
 
 - ### Install Guide
-1. `git clone https://github.com/Luxw098/nestjs-svelte-template`
-2. `cd nestjs-svelte-template`
+1. `git clone https://github.com/Luxw098/nestjs-svelte-template ProjectName`
+2. `cd ProjectName`
 3. `bun run setup`
-3. `bun run db` If you want the Prisma ORM.
+3. `bun run db` If you're using the Prisma ORM
 4. `bun run dev`
 <br><br>
 
@@ -13,16 +13,15 @@
 1. Edit `backend/src/app.module.ts` to configure controllers and providers.
 - Backend API
 - Prisma ORM
-- Accounts & JWTCookie Authentication *(Prisma Required)*
 - Socket.IO Server
 2. Edit `backend/prisma/schema.prisma` to configure your database.
-- Default database is `SQLite`
+- Default database is SQLite
 3. run `bun run db` to update the database
-4. If applicable, edit `backend/.env` to configure your `database URL`.
+4. If applicable, edit `backend/.env` to configure your database URL.
 5. Setup ports at these locations:
-- `backend/src/main.ts` for `NestJS/Back-end PORT`
-- `frontend/vite.config.ts` for `Vite/Front-end PORTS`
-6. Run `bun run dev` to start the server.
+- `backend/src/main.ts` for Back-end ports
+- `frontend/vite.config.ts` for Front-end ports
+6. Run `bun run dev` to start the server in dev mode.
 <br><br>
 
 ---
