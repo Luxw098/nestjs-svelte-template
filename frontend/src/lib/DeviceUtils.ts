@@ -26,9 +26,9 @@ class DeviceUtils {
     get: async () => {
       return Cookies.get();
     },
-    set: async (key: string, value: string, options?) => {
+    set: async (key: string, value: string, options?: Cookies.CookieAttributes) => {
       return Cookies.set(key, value, options);
     }
-  }
+  };
 };
 export default DeviceUtils;

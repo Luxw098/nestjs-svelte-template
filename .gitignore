@@ -1,20 +1,19 @@
 .vscode
 
-*/prisma/migrations/*
-*/prisma/*.db
+**/prisma/migrations/*
+**/prisma/*.db
 
-*/node_modules
-node_modules
+**/node_modules
 
-*/bun.lockb
-bun.lockb
+**/bun.lockb
+cert/*
 
 # Svelte client
-*/.svelte-kit
+**/.svelte-kit
 
 # compiled output
-*/build
-*/dist
+**/build
+**/dist
 dist
 
 # Logs

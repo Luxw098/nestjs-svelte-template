@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Render } from '@nestjs/common';
-import JwtService from "../db/jwt.service";
+import JwtService from "../db/auth/jwt.service";
 import AccountsService from "../db/accounts.service";
 import imports from "../imports";
 

@@ -8,13 +8,11 @@ import allimports from "./imports";
 @Module({
   controllers: [].concat(...[
     imports.appControllers, // Main app controller
-    imports.authControllers, // Account + JWTCookie authentication (Prisma Required)
     imports.apiControllers, // Backend API
   ]),
   providers: [].concat(...[
     imports.appProviders, // Main app controller
     imports.dbProviders, // Prisma connection (sqlite)
-    imports.authProviders, // Account + JWTCookie authentication (Prisma Required)
     imports.socketsProviders // Socket.io WS serve
   ]),
   exports: [allimports.IJwt, allimports.IAccounts, allimports.IPrisma],

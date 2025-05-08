@@ -6,7 +6,7 @@ import IAuth from "./controllers/auth.controller";
 import IAppService from "./app.service"
 import IPrisma from "./db/prisma.service";
 import IAccounts from "./db/accounts.service";
-import IJwt from "./db/jwt.service";
+import IJwt from "./db/auth/jwt.service";
 
 import ISocket from "./gateways/wss.gateway";
 
